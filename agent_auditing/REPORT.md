@@ -1,4 +1,4 @@
-# Validation report: Agent auditor applied on financial-crime alert triage 
+## Validation report: Agent auditor applied on financial-crime alert triage 
 
 Models audited: `gemma3:1b` and `gemma3:4b` (local, via Ollama) · Author: Ippocratis Saltas_
 
