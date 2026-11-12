@@ -10,7 +10,7 @@ The notebook includes a worked example: an agent that triages financial-crime al
 
 ## The idea
 
-Any agent is a model, some tools, and a loop that connects them. To validate it, you only need four task-specific inputs. The loop, the metrics and the findings stay the same.
+Agent = LLM model + tools + a loop that connects the tools. To validate it, we only need four task-specific inputs. The loop, the metrics and the findings stay the same.
 
 | Input | What it is | Example (bank alerts) |
 |---|---|---|
