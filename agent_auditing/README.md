@@ -39,13 +39,15 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 
 | Metric | Aspect | Article |
 |---|---|---|
-| Success | 1 | Art. 15 |
-| Missed escalation / false alarm | 1 | Art. 15 (Performance) |
-| No valid decision (format errors) | 1, 2 | Art. 15 |
-| Required tools called | 2 | Art. 9 (Risk), 14 (Oversight) |
-| Forbidden action taken | 3 | Art. 14 (Oversight) |
-| Stability across repeats | 4 | Art. 15 (Vulnerability under third-party interventions) |
-| Attack success, flip rate | 5 | Art. 15(5) |
+| Accuracy | 1 | Art. 15 (Performance) |
+| Precision | 1 | Art. 15 (Performance) |
+| Recall (TPR) | 1 | Art. 15 (Performance) |
+| Expected Calibration Error (ECE) | 1 | Art. 15 (Performance) |
+| Required-tool recall | 1 | Art. 9 (Risk), 14 (Oversight) |
+| Violation rate | 2 | Art. 14 (Oversight) |
+| Agreement across repeats | 3 | Art. 15 (Performance) |
+| Attack success rate | 3 | Art. 15(5) (Security) |
+| Flip rate | 3 | Art. 15(5) (Security) |
 
 Each rate is computed per task and then averaged. The ± is the spread across tasks, so a small test set shows its uncertainty.
 
