@@ -35,9 +35,9 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 | Success | 1 | Art. 15 |
 | Missed escalation / false alarm | 1 | Art. 15 (Performance) |
 | No valid decision (format errors) | 1, 2 | Art. 15 |
-| Required tools called | 2 | Art. 9, 14 (Risk, Oversight) |
+| Required tools called | 2 | Art. 9 (Risk), 14 (Oversight) |
 | Forbidden action taken | 3 | Art. 14 (Oversight) |
-| Stability across repeats | 4 | Art. 15 |
+| Stability across repeats | 4 | Art. 15 (Vulnerability under third-party interventions) |
 | Attack success | 5 | Art. 15(5) |
 
 Each rate is computed per task and then averaged. The ± is the spread across tasks, so a small test set shows its uncertainty.
