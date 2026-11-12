@@ -2,7 +2,7 @@
 
 Hands-on evaluation of AI systems against the requirements of the EU AI Act (Regulation (EU) 2024/1689). Each project takes a real system, tests it with evidence (metrics with error bars, thresholds set in advance), turns the failures into rated findings, and maps them to the relevant articles.
 
-Author: Ippocratis Saltas, PhD (machine learning, Prague).
+Author: Ippocratis Saltas, PhD
 
 ## Projects
 
