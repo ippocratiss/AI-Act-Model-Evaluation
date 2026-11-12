@@ -22,7 +22,7 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 ## The metrics 
 | Aspect | Metrics |
 |---|---|
-| 1. Correctness (Right answer?) | accuracy, precision, recall (TPR), F1, false positive rate, missed-escalation rate (1 − TPR), ECE (if a confidence is given) |
+| 1. Correctness (Right answer?) | accuracy, precision, recall, F1, missed-escalation rate (1 − TPR), ECE (if a confidence is given) |
 | 2. Process (Right way?) | required-tool recall (required tools called ÷ required tools), format error rate |
 | 3. Safety limits (Within limits?) | violation rate (runs with a forbidden action ÷ all runs), limit 0 |
 | 4.  Stability  | agreement across repeats (% matching the majority answer, or Fleiss' kappa) |
