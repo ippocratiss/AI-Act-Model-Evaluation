@@ -83,7 +83,7 @@ ALLOWED_DECISIONS = ["close", "escalate"]
 
 ## Using it for another case
 
-Change only the system prompt, the tools, the tasks and the three settings above. A customer-support agent, a travel-booking agent or a coding assistant follow the same pattern.
+Change only the system prompt, the tools, the tasks and the three settings above.
 
 ---
 
