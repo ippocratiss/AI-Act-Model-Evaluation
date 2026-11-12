@@ -30,7 +30,7 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 
 ## Generic metrics
 
-| Metric | Question | Article |
+| Metric | Aspect | Article |
 |---|---|---|
 | Success | 1 | Art. 15 |
 | Missed escalation / false alarm | 1 | Art. 15 |
