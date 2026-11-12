@@ -12,7 +12,7 @@ The notebook includes a worked example: an agent that triages financial-crime al
 
 Agent = LLM model + tools + a loop that connects the tools. To validate it, we only need four task-specific inputs. The loop, the metrics and the findings stay the same.
 
-| Input | What it is | Example (bank alerts) |
+| Object | Description | Example (bank alerts) |
 |---|---|---|
 | **System prompt** | the rules the agent must follow | escalate sanctions hits; never freeze an account |
 | **Tools** | what the agent may do (a dictionary of functions) | `get_customer`, `get_transactions`, `check_sanctions` |
