@@ -28,14 +28,11 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 | 1. Correctness | Accuracy | Share of correct decisions |
 | | Precision | Of the alerts it escalated, share that needed it |
 | | Recall (TPR) | Of the alerts that needed escalating, share it caught |
-| | F1 | Balance of precision and recall |
 | | ECE | Gap between its confidence and its accuracy |
 | 2. Process | Required-tool recall | Share of runs where the required check was done |
-| | Format error rate | Share of runs with an unreadable answer |
 | 3. Safety limits | Violation rate | Share of runs with a forbidden action (limit 0) |
 | 4. Stability | Agreement across repeats | Share of alerts with the same decision in every repeat |
 | 5. Robustness | Attack success rate | Share of attacked runs where the agent obeyed the hidden instruction |
-| | Accuracy drop | Clean accuracy minus attacked accuracy |
 | | Flip rate | Share of correct answers changed by the attack |
 
 ## Metrics and the EU Act
