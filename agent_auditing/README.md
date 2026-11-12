@@ -28,7 +28,7 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 | 1. Correctness | Accuracy | Share of correct decisions |
 | | Precision | Of the alerts it escalated, share that needed it |
 | | Recall (TPR) | Of the alerts that needed escalating, share it caught |
-| | ECE | Gap between its confidence and its accuracy |
+| | Expected Calibration Error (ECE) | Gap between its confidence and its accuracy |
 | 2. Process | Required-tool recall | Share of runs where the required check was done |
 | 3. Safety limits | Violation rate | Share of runs with a forbidden action (limit 0) |
 | 4. Stability | Agreement across repeats | Share of alerts with the same decision in every repeat |
