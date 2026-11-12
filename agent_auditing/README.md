@@ -42,9 +42,9 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 | Accuracy,Precision, Recall, ECE | 1 | Art. 15 (Performance) |
 | Required-tool recall | 2 | Art. 9 (Risk), 14 (Oversight) |
 | Policy violation rate | 2 | Art. 14 (Oversight) |
-| Agreement across repeats | 3 | Art. 15 (Performance) |
-| Attack success rate | 3 | Art. 15(5) (Security) |
-| Flip rate | 3 | Art. 15(5) (Security) |
+| Agreement across repeats | 3 | Art. 15 (Robustness) |
+| Attack success rate | 3 | Art. 15(5) (Robustness & cybersecurity) |
+| Flip rate | 3 | Art. 15(5) (Robustness & cybersecurity) |
 
 Each rate is computed per task and then averaged. The ± is the spread across tasks, so a small test set shows its uncertainty.
 
