@@ -28,7 +28,7 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 | 4.  Stability  | agreement across repeats (% matching the majority answer, or Fleiss' kappa) |
 | 5. Robustness (e.g. Hidden prompts) | attack success rate (ASR), accuracy drop (clean − attacked), flip rate |
 
-## Generic metrics
+## Metrics and the EU Act
 
 | Metric | Aspect | Article |
 |---|---|---|
