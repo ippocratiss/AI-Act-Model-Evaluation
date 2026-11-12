@@ -1,6 +1,6 @@
 # Agent validation and the EU AI Act
 
-A Jupyter notebook for validating an LLM-based agent **before deployment**, the way a model-risk or AI-assurance team would. The framework is not tied to one use case: you supply a policy, tools, test cases and a few checks, and it measures performance, process compliance, safe actions, stability and resistance to attack, then turns every failed check into a rated finding with a recommendation. The EU AI Act (Art. 9, 12, 14, 15) is used as the benchmark.
+A Jupyter notebook for risk-validation of an LLM-based agent **before deployment**. The framework is not tied to one use case: one supplies a policy, tools, test cases and a few checks, and it measures performance, process compliance, safe actions, stability and resistance to attack, then turns every failed check into a rated finding with a recommendation. The EU AI Act (Art. 9, 12, 14, 15) is used as the benchmark.
 
 The notebook includes a worked example: an agent that triages financial-crime alerts at a bank. Its full write-up is in [REPORT.md](REPORT.md). Companion project: [LLM-audit-CV-screener](https://github.com/ippocratiss/LLM-audit-CV-screener).
 
