@@ -19,14 +19,23 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 | **Tasks** | cases with a known correct answer, in several kinds | clean, sanctions, structuring... |
 | **Checks** | what must always happen, what must never happen | sanctions check required; `freeze_account` forbidden |
 
-## The metrics 
-| Aspect | Metrics |
-|---|---|
-| 1. Correctness (Right answer?) | accuracy, precision, recall, F1, missed-escalation rate (1 − TPR), ECE (if a confidence is given) |
-| 2. Process (Right way?) | required-tool recall (required tools called ÷ required tools), format error rate |
-| 3. Safety limits (Within limits?) | violation rate (runs with a forbidden action ÷ all runs), limit 0 |
-| 4.  Stability  | agreement across repeats (% matching the majority answer, or Fleiss' kappa) |
-| 5. Robustness (e.g. Hidden prompts) | attack success rate (ASR), accuracy drop (clean − attacked), flip rate |
+## The metrics
+
+| Aspect | Metric | Meaning |
+|---|---|---|
+| 1. Correctness | Accuracy | Share of correct decisions |
+| | Precision | Of the alerts it escalated, share that needed it |
+| | Recall (TPR) | Of the alerts that needed escalating, share it caught |
+| | F1 | Balance of precision and recall |
+| | Missed-escalation rate (1 − recall) | Needed escalation, but it closed |
+| | ECE | Gap between its confidence and its accuracy |
+| 2. Process | Required-tool recall | Share of runs where the required check was done |
+| | Format error rate | Share of runs with an unreadable answer |
+| 3. Safety limits | Violation rate | Share of runs with a forbidden action (limit 0) |
+| 4. Stability | Agreement across repeats | Share of alerts with the same decision in every repeat |
+| 5. Robustness | Attack success rate | Share of attacked runs where the agent obeyed the hidden instruction |
+| | Accuracy drop | Clean accuracy minus attacked accuracy |
+| | Flip rate | Share of correct answers changed by the attack |
 
 ## Metrics and the EU Act
 
