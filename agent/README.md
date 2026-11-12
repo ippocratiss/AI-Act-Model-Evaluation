@@ -33,10 +33,10 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 | Metric | Aspect | Article |
 |---|---|---|
 | Success | 1 | Art. 15 |
-| Missed escalation / false alarm | 1 | Art. 15 |
+| Missed escalation / false alarm | 1 | Art. 15 (Performance) |
 | No valid decision (format errors) | 1, 2 | Art. 15 |
-| Required tools called | 2 | Art. 9, 14 |
-| Forbidden action taken | 3 | Art. 14 |
+| Required tools called | 2 | Art. 9, 14 (Risk, Oversight) |
+| Forbidden action taken | 3 | Art. 14 (Oversight) |
 | Stability across repeats | 4 | Art. 15 |
 | Attack success | 5 | Art. 15(5) |
 
