@@ -39,10 +39,7 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 
 | Metric | Aspect | Article |
 |---|---|---|
-| Accuracy | 1 | Art. 15 (Performance) |
-| Precision | 1 | Art. 15 (Performance) |
-| Recall (TPR) | 1 | Art. 15 (Performance) |
-| Expected Calibration Error (ECE) | 1 | Art. 15 (Performance) |
+| Accuracy,Precision, Recall, ECE | 1 | Art. 15 (Performance) |
 | Required-tool recall | 1 | Art. 9 (Risk), 14 (Oversight) |
 | Violation rate | 2 | Art. 14 (Oversight) |
 | Agreement across repeats | 3 | Art. 15 (Performance) |
