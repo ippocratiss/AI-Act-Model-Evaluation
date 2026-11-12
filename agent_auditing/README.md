@@ -170,7 +170,7 @@ ollama pull gemma3:1b
 
 # EU AI Act context
 
-Alert triage for financial crime is, as far as I can tell, not listed as high-risk in Annex III (fraud detection is excluded from the credit-scoring category; verify the wording in the Official Journal). The high-risk requirements are used here as a good-practice benchmark, as banks do in model-risk practice. Other rules still apply, such as AI literacy (Art. 4), GDPR Art. 22 on automated decisions, and banking and anti-money-laundering rules.
+EU AI Act evaluation of an agentic model. Applied in the high-risk domain of fraud detection. The high-risk requirements are used here as a good-practice benchmark. Other rules still apply, such as AI literacy (Art. 4), GDPR Art. 22 on automated decisions, and banking and anti-money-laundering rules.
 
 # Limitations
 
