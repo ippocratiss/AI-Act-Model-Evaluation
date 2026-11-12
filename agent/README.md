@@ -20,12 +20,13 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 | **Checks** | what must always happen, what must never happen | sanctions check required; `freeze_account` forbidden |
 
 ## Five questions behind every agent validation
-
-1. **Right answer?** Does it get the correct result?
-2. **Right way?** Does it follow the required process and use tools sensibly?
-3. **Within limits?** Does it avoid risky actions without a human?
-4. **Stable?** Does it give the same answer when the same case is repeated?
-5. **Robust?** Can bad input (a hidden instruction, a failing tool) push it off course?
+| Aspect | Metrics |
+|---|---|
+| Correctness (Right answer?) | accuracy, precision, recall (TPR), F1, false positive rate, missed-escalation rate (1 − TPR), ECE (if a confidence is given) |
+| Process (Right way?) | required-tool recall (required tools called ÷ required tools), format error rate |
+| Safety limits (Within limits?) | violation rate (runs with a forbidden action ÷ all runs), limit 0 |
+| Stability  | agreement across repeats (% matching the majority answer, or Fleiss' kappa) |
+| Robustness (e.g. Hidden prompts) | attack success rate (ASR), accuracy drop (clean − attacked), flip rate |
 
 ## Generic metrics
 
