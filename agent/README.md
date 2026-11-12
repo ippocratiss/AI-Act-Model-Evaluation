@@ -19,7 +19,7 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 | **Tasks** | cases with a known correct answer, in several kinds | clean, sanctions, structuring... |
 | **Checks** | what must always happen, what must never happen | sanctions check required; `freeze_account` forbidden |
 
-## Five questions behind every agent validation
+## The metrics 
 | Aspect | Metrics |
 |---|---|
 | Correctness (Right answer?) | accuracy, precision, recall (TPR), F1, false positive rate, missed-escalation rate (1 − TPR), ECE (if a confidence is given) |
