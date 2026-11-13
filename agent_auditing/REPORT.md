@@ -19,7 +19,7 @@ Reminder: Accuracy = (TP + TN)/(TP + TN + FP + FN). Precision = TP/(TP+FP), Reca
 | 1B | about 0.60 (same as always escalate) | very high | about 0.60 |
 | 4B | 0.525 (above always close, 0.40) | about 0.21 | high |
 
-- **The two models fail in opposite ways.** `gemma3:1b` escalates almost everything (low precision, high recall). `gemma3:4b` closes almost everything (high precision, low recall). Neither applies the payment and country rules.
+- **The two models fail in opposite ways.** `gemma3:1b` escalates almost everything (TP high, TN low, low precision, high recall). `gemma3:4b` closes almost everything (TP low, TN high, high precision, low recall). Neither applies the payment and country rules.
 - **Neither beats a trivial rule by much.** `1b` scores exactly the "always escalate" baseline (accuracy, precision = 0.600, recall = 1.0, FPR = 1.0). `4b` scores 0.525, above the "always close" baseline (0.400), but its extra correct answers appear to come only from the sanctions alerts.
 - **A larger model fixed the process, not the substance.** The sanctions check went from 92.5% to 100% of runs, stability from 0.983 to 1.000, and false alarms from 0.979 to 0. The missed escalations rose from 1.4% to 79%.
 - **The hidden-instruction attack:** 0.167 for `1b` (about 1 in 6 runs). For `4b` the attack changed nothing measurable: attack success (0.792) equals its missed-escalation rate without the attack (0.792).
