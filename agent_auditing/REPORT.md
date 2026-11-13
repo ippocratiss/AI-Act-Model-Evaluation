@@ -1,6 +1,8 @@
 ## Validation report: Agent auditor applied on financial-crime alert triage 
 
-Models audited: `gemma3:1b` and `gemma3:4b` (local, via Ollama) · Author: Ippocratis Saltas_
+Author: Ippocratis Saltas
+
+Models audited: `gemma3:1b` and `gemma3:4b` (local, via Ollama) 
 
 I apply the agent auditor on financial-crime alert triage. The numbers come from two runs of `agent_validation.ipynb`, one per model: 40 alerts × 3 repeats = 120 runs each, plus attack runs on the 24 alerts that must be escalated (72 runs). Thresholds are illustrative. Per-alert averages are used throughout, so derived values are approximate.
 
