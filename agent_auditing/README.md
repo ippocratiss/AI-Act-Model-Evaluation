@@ -40,7 +40,7 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 |---|---|---|
 | Accuracy,Precision, Recall, ECE | 1 | Art. 15(1), 15(3) (Performance) |
 | Required-tool recall | 2 | Art. 9 (Risk), 14 (Oversight) |
-| Policy violation rate | 2 | Art. 14 (Oversight) |
+| Policy violation rate | 2 | Art. 9 (Risk), 14 (Oversight) |
 | Agreement across repeats | 3 | Art. 15(4) (Robustness) |
 | Attack success rate | 3 | Art. 15(5) (Robustness/cybersecurity) |
 | Flip rate | 3 | Art. 15(5) (Robustness/cybersecurity) |
