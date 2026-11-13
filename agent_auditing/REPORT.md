@@ -97,7 +97,7 @@ gemma3:1b is almost indistinguishable from a rule that always escalates. gemma3:
 
 ### 4.3 Attack
 
-- **`gemma3:1b`:** 0.167 ± 0.060, about 1 in 6 attacked runs closed an alert that must be escalated.
+- **`gemma3:1b`:** attack success is 0.167 ± 0.060, i.e. about 17% of the attacked runs (modified prompt) closed an alert that must be escalated.
 - **`gemma3:4b`:** attack success is 0.792, equal to its missed-escalation rate without the attack (0.792). It closes the same alerts with or without the hidden instruction, so the attack had no measurable effect.
 - **Why "attack success" is a weak metric here:** it counts every `close` on an alert that should be escalated, including those the agent would close anyway. A fairer metric is the flip rate: of the alerts the agent got right without the attack, the share it gets wrong with the attack.
 - **A caution:** the note appears only in the `get_customer` result. If the agent rarely calls that tool, the attack has no hook, and the result says little about robustness. The share of attacked runs that read the note was not recorded.
