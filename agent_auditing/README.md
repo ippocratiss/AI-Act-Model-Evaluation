@@ -19,7 +19,6 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 | **Tasks** | cases with a known correct answer, in several kinds | clean, sanctions, structuring... |
 | **Checks** | what must always happen, what must never happen | sanctions check required; `freeze_account` forbidden |
 
-## The metrics
 
 ## The metrics
 
@@ -39,14 +38,15 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 
 | Metric | Aspect | Article |
 |---|---|---|
-| Accuracy,Precision, Recall, ECE | 1 | Art. 15 (Performance) |
+| Accuracy,Precision, Recall, ECE | 1 | Art. 15(1), 15(3) (Performance) |
 | Required-tool recall | 2 | Art. 9 (Risk), 14 (Oversight) |
 | Policy violation rate | 2 | Art. 14 (Oversight) |
-| Agreement across repeats | 3 | Art. 15 (Robustness) |
-| Attack success rate | 3 | Art. 15(5) (Robustness & cybersecurity) |
-| Flip rate | 3 | Art. 15(5) (Robustness & cybersecurity) |
+| Agreement across repeats | 3 | Art. 15(4) (Robustness) |
+| Attack success rate | 3 | Art. 15(5) (Robustness/cybersecurity) |
+| Flip rate | 3 | Art. 15(5) (Robustness/cybersecurity) |
 
 Each rate is computed per task and then averaged. The ± is the spread across tasks, so a small test set shows its uncertainty.
+
 
 ## The generic loop
 
@@ -172,6 +172,14 @@ ollama pull gemma3:1b
 
 EU AI Act evaluation of an agentic model. Applied in the high-risk domain of fraud detection. The high-risk requirements are used here as a good-practice benchmark. Other rules still apply, such as AI literacy (Art. 4), GDPR Art. 22 on automated decisions, and banking and anti-money-laundering rules.
 
+### Relevant EU AI Act articles used in this audit
+
+- **Art. 9 (Risk):** a risk management process must identify, assess and reduce the risks of a high-risk system throughout its life.
+- **Art. 10 (Data):** training, validation and test data must be relevant, representative and checked for bias.
+- **Art. 12 (Logging):** the system must automatically record events so its decisions can be traced afterwards.
+- **Art. 14 (Oversight):** the system must be designed so a human can understand, oversee and override it.
+- **Art. 15 (Performance, Robustness):** the system must reach an appropriate level of accuracy and keep behaving consistently despite errors and inconsistencies.
+- **Art. 15(5) (Security):** the system must resist attempts by third parties to change its outputs by exploiting vulnerabilities.
 # Limitations
 
 - Synthetic alerts and simple rules; not tested on real alerts.
