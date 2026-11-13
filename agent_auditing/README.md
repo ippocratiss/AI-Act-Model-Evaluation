@@ -28,9 +28,9 @@ Agent = LLM model + tools + a loop that connects the tools. To validate it, we o
 | | Precision | Of the alerts it escalated, share that needed it |
 | | Recall (TPR) | Of the alerts that needed escalating, share it caught |
 | | Expected Calibration Error (ECE) | Gap between its confidence and its accuracy |
-| 2. Risk/safety | Policy violation rate | Share of runs with a forbidden action (limit 0) |
+| 2. Risk/safety/overight | Policy violation rate | Share of runs with a forbidden action (limit 0) |
 | | Required-tool recall | Share of runs where the required check was done |
-| 3. Robustness | Agreement across repeats | Share of alerts with the same decision in every repeat |
+| 3.Robustness/cybersecurity | Agreement across repeats | Share of alerts with the same decision in every repeat |
 | | Attack success rate | Share of attacked runs where the agent obeyed the hidden instruction |
 | | Flip rate | Share of correct answers changed by the attack |
 
