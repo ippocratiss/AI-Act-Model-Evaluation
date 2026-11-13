@@ -90,7 +90,6 @@ Each model passes the easy checks (format, no freezing, stability) and fails the
 |---|---|---|---|---|
 | Accuracy | 0.600 | 0.525 | 0.600 | 0.400 |
 | Recall (TPR) | about 0.986 | about 0.208 | 1.000 | 0.000 |
-| False positive rate | about 0.979 | 0.000 | 1.000 | 0.000 |
 | Precision | about 0.60 | about 1.00 | 0.600 | n/a |
 
 gemma3:1b is almost indistinguishable from a rule that always escalates. gemma3:4b is a cautious filter: everything it escalates is right, but it escalates only about a fifth of what it should.
