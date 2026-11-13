@@ -14,6 +14,13 @@ True escalate share = 60%. True non-escalate (close) share = 40%.
 
 Reminder: Accuracy = (TP + TN)/(TP + TN + FP + FN). Precision = TP/(TP+FP), Recall = TP/(TP + FN).
 
+| Model | Accuracy | Recall | Precision |
+|---|---|---|---|
+| `gemma3:1b` | 0.600 | 0.986 | 0.60 |
+| `gemma3:4b` | 0.525 | 0.208 | 1.00 |
+| Always escalate (dummy) | 0.600 | 1.000 | 0.600 |
+| Always close (dummy) | 0.400 | 0.000 | n/a |
+
 - **The two models fail in opposite ways.** `gemma3:1b` escalates almost everything (98% of the alerts that should be closed were escalated -- low precision, high recall). `gemma3:4b` closes almost everything (79% of the alerts that must be escalated were missed -- high precision, low recall). Neither applies the payment and country rules.
 - **Neither beats a trivial rule by much.** `1b` scores exactly the "always escalate" baseline (accuracy, precision = 0.600, recall = 1.0, FPR = 1.0). `4b` scores 0.525, above the "always close" baseline (0.400), but its extra correct answers appear to come only from the sanctions alerts.
 - **A larger model fixed the process, not the substance.** The sanctions check went from 92.5% to 100% of runs, stability from 0.983 to 1.000, and false alarms from 0.979 to 0. The missed escalations rose from 1.4% to 79%.
