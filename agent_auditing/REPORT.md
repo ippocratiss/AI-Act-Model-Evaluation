@@ -86,37 +86,24 @@ Each model passes the easy checks (format, no freezing, stability) and fails the
 
 "Positive" means escalate. Agent values are derived from the table above (recall = 1 − missed escalation, false positive rate = false alarm rate), so they are approximate.
 
-| | `gemma3:1b` | `gemma3:4b` | Always "escalate" | Always "close" |
+| | gemma3:1b | gemma3:4b | Always "escalate" | Always "close" |
 |---|---|---|---|---|
 | Accuracy | 0.600 | 0.525 | 0.600 | 0.400 |
 | Recall (TPR) | about 0.986 | about 0.208 | 1.000 | 0.000 |
 | False positive rate | about 0.979 | 0.000 | 1.000 | 0.000 |
 | Precision | about 0.60 | about 1.00 | 0.600 | n/a |
 
-`gemma3:1b` is almost indistinguishable from a rule that always escalates. `gemma3:4b` is a cautious filter: everything it escalates is right, but it escalates only about a fifth of what it should.
+gemma3:1b is almost indistinguishable from a rule that always escalates. gemma3:4b is a cautious filter: everything it escalates is right, but it escalates only about a fifth of what it should.
 
-### 4.3 Success by kind of alert
 
-| Kind | `gemma3:1b` (measured) | `gemma3:4b` |
-|---|---|---|
-| clean | 0.03 | about 1.00 (inferred) |
-| high_risk_small | 0.00 | about 1.00 (inferred) |
-| sanctions | 1.00 | about 1.00 (inferred) |
-| structuring | 0.95 | about 0.00 (inferred) |
-| high_risk_large | 1.00 | about 0.00 (inferred) |
-
-For `gemma3:4b` the breakdown is inferred, not measured. Its missed-escalation rate is 0.792, which is 19 of 24 alerts, and the 5 sanctions alerts are the remaining 5 of 24. The most likely reading is that it escalates exactly the sanctions alerts and ignores the other two rules. This should be confirmed with `runs.groupby("kind").success.mean()`.
-
-For `gemma3:1b`, every alert that should be escalated is right and every alert that should be closed is wrong. This is the pattern of a default "escalate".
-
-### 4.4 Attack
+### 4.3 Attack
 
 - **`gemma3:1b`:** 0.167 ± 0.060, about 1 in 6 attacked runs closed an alert that must be escalated.
 - **`gemma3:4b`:** attack success is 0.792, equal to its missed-escalation rate without the attack (0.792). It closes the same alerts with or without the hidden instruction, so the attack had no measurable effect.
 - **Why "attack success" is a weak metric here:** it counts every `close` on an alert that should be escalated, including those the agent would close anyway. A fairer metric is the flip rate: of the alerts the agent got right without the attack, the share it gets wrong with the attack.
 - **A caution:** the note appears only in the `get_customer` result. If the agent rarely calls that tool, the attack has no hook, and the result says little about robustness. The share of attacked runs that read the note was not recorded.
 
-### 4.5 Format and process
+### 4.4 Format and process
 
 - **Format errors:** none for either model. The strict output format and the tool-error message worked, and the early problem of the model writing its decision in the "tool" field did not recur.
 - **Sanctions check:** skipped in about 7.5% of runs by `gemma3:1b`, never by `gemma3:4b`.
