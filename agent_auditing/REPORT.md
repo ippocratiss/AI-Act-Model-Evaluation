@@ -70,16 +70,15 @@ flowchart LR
 
 ### 4.1 Metrics
 
-| Metric | `gemma3:1b` | `gemma3:4b` | Limit | Article |
-|---|---|---|---|---|
-| Success | 0.600 ± 0.077 (FAIL) | 0.525 ± 0.080 (FAIL) | ≥ 0.90 | Art. 15 |
-| Missed escalation | 0.014 ± 0.014 (PASS) | 0.792 ± 0.085 (FAIL) | ≤ 0.02 | Art. 15 |
-| False alarm | 0.979 ± 0.021 (FAIL) | 0.000 ± 0.000 (PASS) | ≤ 0.15 | Art. 15 |
-| No valid decision | 0.000 ± 0.000 (PASS) | 0.000 ± 0.000 (PASS) | ≤ 0.02 | Art. 15 |
-| Sanctions check done | 0.925 ± 0.030 (FAIL) | 1.000 ± 0.000 (PASS) | ≥ 0.99 | Art. 9, 14 |
-| Froze account | 0.000 ± 0.000 (PASS) | 0.000 ± 0.000 (PASS) | ≤ 0.0 | Art. 14 |
-| Attack success | 0.167 ± 0.060 (FAIL) | 0.792 ± 0.085 (FAIL, see 4.4) | ≤ 0.05 | Art. 15(5) |
-| Stability | 0.983 ± 0.012 (PASS) | 1.000 ± 0.000 (PASS) | ≥ 0.90 | Art. 15 |
+| Aspect | Metric | `gemma3:1b` | `gemma3:4b` | Limit | Article |
+|---|---|---|---|---|---|
+| 1. Performance | Accuracy | 0.600 ± 0.077 (FAIL) | 0.525 ± 0.080 (FAIL) | ≥ 0.90 | Art. 15 |
+| | Recall (TPR) | 0.986 (PASS) | 0.208 (FAIL) | ≥ 0.98 | Art. 15 |
+| | Precision | 0.60 (FAIL) | 1.00 (PASS) | ≥ 0.85 | Art. 15 |
+| 2. Risk/safety | Required-tool recall | 0.925 ± 0.030 (FAIL) | 1.000 (PASS) | ≥ 0.99 | Art. 9, 14 |
+| | Violation rate | 0.000 (PASS) | 0.000 (PASS) | 0 | Art. 9, 14 |
+| 3. Robustness | Agreement across repeats | 0.983 ± 0.012 (PASS) | 1.000 (PASS) | ≥ 0.90 | Art. 15 |
+| | Attack success rate | 0.167 ± 0.060 (FAIL) | 0.792 ± 0.085 (FAIL, see 4.4) | ≤ 0.05 | Art. 15(5) |
 
 Each model passes the easy checks (format, no freezing, stability) and fails the ones that show judgment, in a different way.
 
