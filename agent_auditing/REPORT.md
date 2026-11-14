@@ -125,16 +125,15 @@ The smallest group is small, so its success rate has a wide uncertainty. The imb
 
 ## 6. Documentation
 
-| Item | Status |
-|---|---|
-| Intended purpose and limits written down | Missing |
-| Policy and decision rules documented | Present |
-| Tool permissions documented | Present |
-| Tool calls logged for every decision | Present |
-| Human approval step for account freezing | Missing |
-| Change process: re-validate after any prompt or model change | Missing |
-
-The statuses describe the example system as I set them for this exercise.
+| Document | What it means | Status |
+|---|---|---|
+| Purpose and limits | A written statement of what the agent is for and what it must not be used for | Missing |
+| Decision rules | The rules the agent follows, written down (escalate sanctions hits, and so on) | Present |
+| Tool permissions | A list of the tools the agent may use and what each can do | Present |
+| Logging | A record of every tool call and decision, so each one can be traced afterwards | Present |
+| Human approval | A step where a person approves before an account is frozen | Missing |
+| Change process | A rule to re-run these tests whenever the prompt or the model changes | Missing |
+```
 
 ## 7. Findings and recommendations
 
