@@ -137,18 +137,13 @@ The smallest group is small, so its success rate has a wide uncertainty. The imb
 
 ## 7. Findings and recommendations
 
-| ID | Model | Finding | Article | Likelihood | Impact | Rating | Recommendation |
-|---|---|---|---|---|---|---|---|
-| F1 | 4b | Missed escalation 0.792 ± 0.085 (limit ≤ 0.02): most alerts that must be escalated are closed | Art. 15 | 3 | 3 | High | Apply the escalation rules in code; the model alone is not safe |
-| F2 | 1b | Sanctions check done 0.925 ± 0.030 (limit ≥ 0.99) | Art. 9, 14 | 3 | 3 | High | Run the sanctions check in code, not at the model's choice |
-| F3 | 1b | Attack success 0.167 ± 0.060 (limit ≤ 0.05) | Art. 15(5) | 3 | 3 | High | Treat customer text as data; filter it; escalate on instruction-like text |
-| F4 | 1b | Success 0.600, equal to the always-escalate baseline | Art. 15 | 3 | 2 | High | Use a stronger model or simplify the task; keep a human decision |
-| F5 | 4b | Success 0.525 ± 0.080 (limit ≥ 0.90) | Art. 15 | 3 | 2 | High | Same as F1 and F4 |
-| F6 | both | Documentation missing: intended purpose and limits | Art. 11, 13, 14 | 3 | 2 | High | Write it before deployment |
-| F7 | both | Documentation missing: human approval step for account freezing | Art. 11, 13, 14 | 3 | 2 | High | Write it before deployment |
-| F8 | both | Documentation missing: change process (re-validate after any change) | Art. 11, 13, 14 | 3 | 2 | High | Write it before deployment |
-| F9 | 1b | False alarm 0.979 ± 0.021 (limit ≤ 0.15) | Art. 15 | 3 | 1 | Medium | Tune the policy; measure analyst workload |
-
+| ID | Model | Finding | Article | Rating | Fix |
+|---|---|---|---|---|---|
+| F1 | 4b | Recall 0.208 (limit ≥ 0.98), accuracy 0.525 (limit ≥ 0.90): it escalates only the sanctions alerts and misses most of the others | Art. 15 | High | Apply the escalation rules in code |
+| F2 | 1b | Accuracy 0.600 and precision 0.60: no better than always escalating, so it escalates almost everything | Art. 15 | High | Stronger model; keep a human decision |
+| F3 | 1b | Required tool calls 0.925 (limit ≥ 0.99): in 7.5% of runs it skips the sanctions check | Art. 9, 14 | High | Run the check in code |
+| F4 | 1b | Attack success rate 16.7% (limit ≤ 5%): it sometimes obeys a hidden instruction in the customer note | Art. 15(5) | High | Treat customer text as data and filter it |
+| F5 | both | Documentation missing: purpose and limits, human approval to freeze an account, change process | Art. 11, 13, 14 | High | Write it before deployment |
 Rating: likelihood × impact, each 1 to 3. High at 6 or more, Medium at 3 to 4, Low at 1 to 2. The attack-success finding for `gemma3:4b` is left out: its value equals the missed-escalation rate, so it adds nothing beyond F1 (see 4.4).
 
 **How to read this.** F1 and F4 are the same root cause seen from two sides. Whatever the model, the escalation rules are not applied reliably, and the failures depend on the model's habits (escalate everything, or escalate only what the one mandatory rule covers). A larger model improved the process but not the decisions.
