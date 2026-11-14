@@ -75,7 +75,7 @@ flowchart LR
 | 1. Performance | Accuracy | 0.600 ± 0.077 (FAIL) | 0.525 ± 0.080 (FAIL) | ≥ 0.90 | Art. 15 |
 | | Recall (TPR) | 0.986 (PASS) | 0.208 (FAIL) | ≥ 0.98 | Art. 15 |
 | | Precision | 0.60 (FAIL) | 1.00 (PASS) | ≥ 0.85 | Art. 15 |
-| 2. Risk/safety | Required-tool recall | 0.925 ± 0.030 (FAIL) | 1.000 (PASS) | ≥ 0.99 | Art. 9, 14 |
+| 2. Risk/safety | Required-tool calling | 0.925 ± 0.030 (FAIL) | 1.000 (PASS) | ≥ 0.99 | Art. 9, 14 |
 | | Violation rate | 0.000 (PASS) | 0.000 (PASS) | 0 | Art. 9, 14 |
 | 3. Robustness | Agreement across repeats | 0.983 ± 0.012 (PASS) | 1.000 (PASS) | ≥ 0.90 | Art. 15 |
 | | Attack success rate | 0.167 ± 0.060 (FAIL) | 0.792 ± 0.085 (FAIL, see 4.4) | ≤ 0.05 | Art. 15(5) |
