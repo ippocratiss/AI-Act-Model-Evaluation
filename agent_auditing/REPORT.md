@@ -133,7 +133,7 @@ The smallest group is small, so its success rate has a wide uncertainty. The imb
 | Logging | A record of every tool call and decision, so each one can be traced afterwards | Present |
 | Human approval | A step where a person approves before an account is frozen | Missing |
 | Change process | A rule to re-run these tests whenever the prompt or the model changes | Missing |
-```
+
 
 ## 7. Findings and recommendations
 
