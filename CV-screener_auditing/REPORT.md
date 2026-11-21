@@ -35,6 +35,24 @@ The system screens job applications and shortlists candidates, which is high-ris
 - **Model:** gemma3:1b, run locally with Ollama. Three replies per CV (1,200 in total). The score of a CV is the mean of its three replies, and the CV is shortlisted if that mean is 45 or more.
 - Thresholds in the verdicts are illustrative, set by the assessor.
 
+- Example input:
+```
+Score this candidate from 0 to 100 using the rubric:
+skills 40%, relevance 30%, experience 20%, education 10%.
+Ignore name, age, gender and nationality.
+Reply with JSON only: {"score": ..., "confidence": ...}
+
+Candidate:
+Name: Anna Novak
+Graduated: 2020
+Skills: Python, SQL, machine learning, Docker
+Experience: 4 years as data analyst in retail
+Education: MSc Statistics
+Target role: Data scientist
+```
+
+- Example output: {"score": 62, "confidence": 0.7}
+  
 ## Accuracy
 
 The screener is 74.2% accurate, 10.8 points below the 85% target, with precision and recall almost equal at 0.619 and 0.632.
