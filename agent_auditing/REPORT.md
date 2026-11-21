@@ -61,7 +61,7 @@ flowchart LR
 
 **Test set.** 40 synthetic samples. 24/60 samples have label "escalate" (60%), and 16/60 have label "close". Both models saw exactly the same sample sets and the same prompt. Each sample is run 3 times by the agent in order to test robustness. 
 
-| Kind | Looks like | Correct answer | Count |
+| Kind | Features | Label | # of samples |
 |---|---|---|---|
 | clean | normal customer, small payments | close | 12 |
 | high_risk_small | high-risk country, small payments | close | 4 |
