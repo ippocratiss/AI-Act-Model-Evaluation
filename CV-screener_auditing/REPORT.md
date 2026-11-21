@@ -74,25 +74,25 @@ The model is balanced between missing qualified candidates and shortlisting unqu
 | Metric | Gender | Age | Nationality |
 |---|---|---|---|
 | Disparate impact ratio (other ÷ reference) | 1.11 ± 0.08 | 0.83 ± 0.07 | 0.99 ± 0.06 |
-| Equal-opportunity gap (TPR difference) | −0.088 ± 0.056 | 0.088 ± 0.047 | 0.000 ± 0.043 |
+| Equal-opportunity gap (Recall difference) | −0.088 ± 0.056 | 0.088 ± 0.047 | 0.000 ± 0.043 |
 | Score gap, reference − other (points) | −1.1 ± 0.5 | 3.9 ± 0.8 | 0.1 ± 0.5 |
 | Score gap in σ | −2.3 | 4.9 | 0.2 |
 
 - Disparate impact ratios (ideal = 1) are within acceptable limits for all three attributes after counting for their errors. They pass the four-fifths rule (age, at 0.83 ± 0.07, is close to the limit). However, the model scores 52-year-old candidates 3.9 points lower than 28-year-olds with identical CVs.
-- TPR gaps do not exceeds 2σ, so the shortlist decisions show no significant bias.
+- Recall gaps do not exceeds 2σ, so the shortlist decisions show no significant bias.
 - Score gaps differ: 52-year-olds score 3.9 ± 0.8 points lower than 28-year-olds (4.9σ) and women score 1.1 ± 0.5 points higher than men (2.3σ). The model reacts to the age cue in its scores even though the cut-off hides most of it.
 
 **How the fairness numbers are calculated** (each attribute is compared separately, with the other two attributes held fixed):
 
 - **Selection rate:** the number of CVs in a group that the model shortlisted divided by the number of CVs in that group (mean score of 3 replies ≥ 45).
 - **Disparate impact ratio:** the other group's selection rate divided by the reference group's selection rate. 1.0 means equal treatment; below 0.80 fails the four-fifths rule.
-- **Equal-opportunity gap (TPR gap):** the recall of the reference group minus the recall of the other group, computed on qualified candidates only. Recall = TP ÷ (TP + FN), the share of qualified candidates who are shortlisted.
+- **Equal-opportunity gap (Recall gap):** the recall of the reference group minus the recall of the other group, computed on qualified candidates only. Recall = TP ÷ (TP + FN), the share of qualified candidates who are shortlisted.
 - **Score gap:** the mean model score of the reference group minus that of the other group. Every candidate has twins in both groups, so the true scores are identical and a gap can only come from the model reacting to the attribute.
 - **± error and σ:** the error is the standard deviation of the metric over many bootstrap resamples that redraw candidates together with all 8 of their twins. σ = gap ÷ error.
 
 **Selection rate vs recall:** recall needs truth labels and only asks whether equally qualified candidates are treated equally. Selection rate needs no labels, and is what legal disparate-impact tests (the four-fifths rule) use, and also shows false positives of the favoured group.
 
-**Twin score gap vs TPR gap:** the score gap is continuous and needs no decision threshold (score ≥ 45), so it is statistically more sensitive. It does not show how many decisions change, because a 4-point gap matters only for candidates near the cut-off; the TPR gap and disparate impact capture that.
+**Twin score gap vs Recall gap:** the score gap is continuous and needs no decision threshold (score ≥ 45), so it is statistically more sensitive. It does not show how many decisions change, because a 4-point gap matters only for candidates near the cut-off; the Recall gap and disparate impact capture that.
 
 ## Calibration
 
@@ -117,7 +117,7 @@ The results show gaps against Articles 10, 14 and 15 and leave Articles 11, 12 a
 | Article | Requirement | Evidence from this audit | Status |
 |---|---|---|---|
 | Art. 6, Annex III(4)(a) | Classification of recruitment systems as high-risk | CV screening and shortlisting | High-risk |
-| Art. 10(2)(f)-(g) | Examine, detect and mitigate bias | Age score gap 3.9 ± 0.8 points (4.9σ), gender −1.1 ± 0.5 (2.3σ); disparate impact and TPR gaps within limits | Gap (age) |
+| Art. 10(2)(f)-(g) | Examine, detect and mitigate bias | Age score gap 3.9 ± 0.8 points (4.9σ), gender −1.1 ± 0.5 (2.3σ); disparate impact and Recall gaps within limits | Gap (age) |
 | Art. 13 | Transparency, accuracy metrics in instructions for use | Accuracy, fairness and calibration metrics available; robustness pending | Evidence partly ready, documentation not written |
 | Art. 14 | Human oversight | ECE 0.118: stated confidence cannot yet guide reviewers | Gap |
 | Art. 15 | Accuracy, robustness, resilience to manipulation | Accuracy 74.2% against the 85% target; robustness and prompt injection not tested | Gap |
