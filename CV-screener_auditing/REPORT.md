@@ -2,7 +2,12 @@
 
 ## Summary
 
-The CV screener for the model gemma3:1b fails the accuracy check (74.2% against a target of 85%) and the calibration check (Expected Calibration Error 0.118 against a limit of 0.05), and it scores 52-year-old candidates 3.9 points lower than 28-year-olds at the same qualifications, so it would not be conformant as tested. Its shortlist decisions pass the four-fifths rule and show no significant True Positive Rate (recall) gap for any group. Robustness tests have not been run on this model yet.
+For the AI CV-screener based on the model gemma3:1b: we find: 
+- It fails the accuracy check: 74.2% against a target of 85%
+- It fails the calibration check: Expected Calibration Error 0.118 against a limit of 0.05
+- It scores 52-year-old candidates 3.9 points lower than 28-year-olds at the same qualifications, so it would not be conformant as tested.
+- Its shortlist decisions pass the four-fifths rule and show no significant True Positive Rate (recall) gap for any group.
+- Robustness tests have not been run on this model yet.
 
 | Aspect | Quantity | Article | Result | Verdict (illustrative thresholds) |
 |---|---|---|---|---|
