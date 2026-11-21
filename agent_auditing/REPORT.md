@@ -59,7 +59,7 @@ flowchart LR
     G --> H[Validation opinion]
 ```
 
-**Test set.** 40 synthetic alerts (seed 42), each run 3 times. 24 must be escalated (60%) and 16 must be closed. Both models saw exactly the same alerts and the same prompt.
+**Test set.** 40 synthetic samples. 24/60 samples have label "escalate" (60%), and 16/60 have label "close". Both models saw exactly the same sample sets and the same prompt. Each sample is run 3 times by the agent in order to test robustness. 
 
 | Kind | Looks like | Correct answer | Count |
 |---|---|---|---|
