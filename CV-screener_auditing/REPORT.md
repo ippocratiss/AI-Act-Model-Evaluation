@@ -51,7 +51,7 @@ Education: MSc Statistics
 Target role: Data scientist
 ```
 
-- Example output: {"score": 62, "confidence": 0.7}
+- Example output: ```{"score": 62, "confidence": 0.7}```
   
 ## Accuracy
 
