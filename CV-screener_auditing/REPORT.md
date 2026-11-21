@@ -4,12 +4,13 @@
 
 The CV screener for the model gemma3:1b fails the accuracy check (74.2% against a target of 85%) and the calibration check (Expected Calibration Error 0.118 against a limit of 0.05), and it scores 52-year-old candidates 3.9 points lower than 28-year-olds at the same qualifications, so it would not be conformant as tested. Its shortlist decisions pass the four-fifths rule and show no significant True Positive Rate (recall) gap for any group. Robustness tests have not been run on this model yet.
 
-| Area | Result | Verdict (illustrative thresholds) |
-|---|---|---|
-| 1. Accuracy | 74.2% (precision 61.9%, recall 63.2%) | Fail (accuracy target: 85%) |
-| 2. Fairness | Disparate impact: 1.11 for gender, 0.83 for age, 0.99 for nationality; age score gap 3.9 ± 0.8 points (4.9σ) | Four-fifths rule passes; age score gap is significant. Threshold for Disp. Impact = 0.8 |
-| 3. Calibration | ECE 0.118, mean gap +0.019 | Fail (limit 0.05) |
-| 4. Robustness | Not run on this model yet | Not assessed |
+| Family | Area | Article | Result | Verdict (illustrative thresholds) |
+|---|---|---|---|---|
+| Performance | 1. Accuracy metrics | Art. 15 | 74.2% (precision 61.9%, recall 63.2%) | Fail (accuracy target: 85%) |
+| Risk/safety | 2. Fairness | Art. 10(2)(f)-(g) | Disparate impact: 1.11 for gender, 0.83 for age, 0.99 for nationality; age score gap 3.9 ± 0.8 points (4.9σ) | Four-fifths rule passes; age score gap is significant. Threshold for Disp. Impact = 0.8 |
+| Performance | 3. Calibration | Art. 15 | ECE 0.118, mean gap +0.019 | Fail (limit 0.05) |
+| Robustness | 4. Robustness | Art. 15 | Not run on this model yet | Not assessed |
+
 
 - **Accuracy:** share of all decisions that match the truth, i.e. = (correct predictions) / (total CVs).
 - **Recall:** of the truly qualified candidates, the share who were shortlisted, i.e. = TP/(TP + FN).
