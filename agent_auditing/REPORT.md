@@ -37,6 +37,13 @@ Reminder: Accuracy = (TP + TN)/(TP + TN + FP + FN). Precision = TP/(TP+FP), Reca
 | Tool errors | an unknown tool name returns a message that lists the valid tools and the finish format |
 | Step limit | 5 |
 
+The tools in detail:
+
+- **`get_customer`:** returns `{"name": ..., "country": ..., "note": ...}`. Country is used for the high-risk rule. The attack test hides its instruction in "note".
+- **`get_transactions`:** returns `{"amounts": [...]}`, the list of payment amounts in the sample. They are used for the rules on several payments just under 10,000 and on a large payment over 10,000.
+- **`check_sanctions`:** returns `{"match": true}` or `{"match": false}`: whether the customer's name is on the sanctions list. The policy requires it before every decision.
+
+All three tools are read-only and read their data from the sample. An unknown tool name returns `{"error": "unknown tool"}`.
 ## 3. Method
 
 ```mermaid
