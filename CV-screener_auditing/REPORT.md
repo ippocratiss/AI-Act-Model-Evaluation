@@ -116,13 +116,12 @@ The results show gaps against Articles 10, 14 and 15 and leave Articles 11, 12 a
 
 | Article | Requirement | Evidence from this audit | Status |
 |---|---|---|---|
-| Art. 6, Annex III(4)(a) | Classification of recruitment systems as high-risk | CV screening and shortlisting | High-risk |
-| Art. 10(2)(f)-(g) | Examine, detect and mitigate bias | Age score gap 3.9 ± 0.8 points (4.9σ), gender −1.1 ± 0.5 (2.3σ); disparate impact and Recall gaps within limits | Gap (age) |
-| Art. 13 | Transparency, accuracy metrics in instructions for use | Accuracy, fairness and calibration metrics available; robustness pending | Evidence partly ready, documentation not written |
-| Art. 14 | Human oversight | ECE 0.118: stated confidence cannot yet guide reviewers | Gap |
-| Art. 15 | Accuracy, robustness, resilience to manipulation | Accuracy 74.2% against the 85% target; robustness and prompt injection not tested | Gap |
-| Art. 11, 12 | Technical documentation (Annex IV), logging | Not tested | Not assessed |
-| Art. 26 | Deployer duties: oversight, monitoring | Not tested | Not assessed |
+| Art. 9 | Risk management | 1b skips the sanctions check in 7.5% of runs (required tool calls 0.925, limit ≥ 0.99); 4b calls it every time (1.000) | Gap (1b) |
+| Art. 11, 13 | Documentation, transparency | Policy and tool permissions written; intended purpose and limits missing | Gap |
+| Art. 12 | Logging | Tool calls logged for every decision | Met |
+| Art. 14 | Human oversight | Policy says never freeze an account, but no human approval step is documented | Gap |
+| Art. 15 | Accuracy, robustness | 1b: accuracy 0.600, precision 0.60, no better than always escalate. 4b: accuracy 0.525, recall 0.208. Limits: accuracy ≥ 0.90, recall ≥ 0.98 | Gap (both) |
+| Art. 15(5) | Security (resistance to manipulation) | Attack success rate 16.7% for 1b (limit ≤ 5%) and 79.2% for 4b | Gap (both) |
 
 **Suggested remediation:** debias the scoring (or remove cues such as graduation year and names), recalibrate confidence, sanitise CV text against embedded instructions, and monitor input drift after deployment (post-market monitoring, Art. 72).
 
