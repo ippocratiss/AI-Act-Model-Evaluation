@@ -68,7 +68,8 @@ The model is balanced between missing qualified candidates and shortlisting unqu
 
 ## Fairness
 
-Reference groups are: Male, 28 years and EU citizen; the other groups are Female, 52 years and non-EU citizen.
+- Reference group: {Male, 28 years and EU citizen}.
+- "Other" group: {Female, 52 years and non-EU citizen}.
 
 | Metric | Gender | Age | Nationality |
 |---|---|---|---|
