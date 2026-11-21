@@ -11,7 +11,7 @@ For the AI CV-screener based on the model gemma3:1b: we find:
 
 | Aspect | Quantity | Article | Result | Verdict (illustrative thresholds) |
 |---|---|---|---|---|
-| Performance | 1. Accuracy metrics | Art. 15 | 74.2% (precision 61.9%, recall 63.2%) | Fail (accuracy target: 85%) |
+| Performance | 1. Accuracy metrics | Art. 15 | Accuracy 74.2%, Precision 61.9%, Recall 63.2% | Fail (accuracy target: 85%) |
 | Risk/safety | 2. Fairness | Art. 10(2)(f)-(g) | Disparate impact: 1.11 for gender, 0.83 for age, 0.99 for nationality; age score gap 3.9 ± 0.8 points (4.9σ) | Four-fifths rule passes; age score gap is significant. Threshold for Disp. Impact = 0.8 |
 | Performance | 3. Calibration | Art. 15 | ECE 0.118, mean gap +0.019 | Fail (limit 0.05) |
 | Robustness | 4. Robustness | Art. 15 | Not run on this model yet | Not assessed |
