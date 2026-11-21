@@ -114,14 +114,17 @@ Robustness has not been run on gemma3:1b yet, so this section lists the planned 
 
 The results show gaps against Articles 10, 14 and 15 and leave Articles 11, 12 and 26 unassessed. Statuses use illustrative thresholds.
 
-| Article | Requirement | Evidence from this audit | Status |
-|---|---|---|---|
-| Art. 9 | Risk management | 1b skips the sanctions check in 7.5% of runs (required tool calls 0.925, limit ≥ 0.99); 4b calls it every time (1.000) | Gap (1b) |
-| Art. 11, 13 | Documentation, transparency | Policy and tool permissions written; intended purpose and limits missing | Gap |
-| Art. 12 | Logging | Tool calls logged for every decision | Met |
-| Art. 14 | Human oversight | Policy says never freeze an account, but no human approval step is documented | Gap |
-| Art. 15 | Accuracy, robustness | 1b: accuracy 0.600, precision 0.60, no better than always escalate. 4b: accuracy 0.525, recall 0.208. Limits: accuracy ≥ 0.90, recall ≥ 0.98 | Gap (both) |
-| Art. 15(5) | Security (resistance to manipulation) | Attack success rate 16.7% for 1b (limit ≤ 5%) and 79.2% for 4b | Gap (both) |
+The CV screener is high-risk (Art. 6, Annex III 4(a)): it screens and shortlists job applicants.
+
+| ID | Finding | Article | Status | Recommendation |
+|---|---|---|---|---|
+| F1 | Age score gap 3.9 ± 0.8 points (4.9σ), gender −1.1 ± 0.5 (2.3σ); disparate impact and recall gaps within limits | Art. 10 | Gap (age) | Remove cues such as graduation year and names; debias the scoring |
+| F2 | ECE 0.118 (limit 0.05): stated confidence cannot guide reviewers | Art. 14 | Gap | Recalibrate the confidence |
+| F3 | Accuracy 74.2% (target 85%) | Art. 15 | Gap | Repeat the audit with a larger model |
+| F4 | Robustness and prompt injection not tested | Art. 15 | Not assessed | Run the robustness tests; filter CV text for hidden instructions |
+| F5 | Accuracy, fairness and calibration metrics available; documentation not written | Art. 13 | Gap | Write the instructions for use |
+| F6 | Technical documentation and logging not tested | Art. 11, 12 | Not assessed | Write the Annex IV documentation |
+| F7 | Deployer duties not tested | Art. 26 | Not assessed | Monitor input drift after deployment (Art. 72) |
 
 **Suggested remediation:** debias the scoring (or remove cues such as graduation year and names), recalibrate confidence, sanitise CV text against embedded instructions, and monitor input drift after deployment (post-market monitoring, Art. 72).
 
